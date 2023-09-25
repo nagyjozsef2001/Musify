@@ -2,9 +2,12 @@ package com.Musify.Security;
 
 import com.Musify.DataTables.Users;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 public class CustomUserDetails implements UserDetails {
 
@@ -19,7 +22,9 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        Set<GrantedAuthority> authority= new HashSet<>();
+        authority.add(new SimpleGrantedAuthority(user.getRole()));
+        return authority;
     }
 
     @Override
@@ -49,6 +54,6 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return !(user.isDeactivated());
     }
 }

@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e86789e-3b85-4984-a5e4-0d1e37cc5763" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_3_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_6_1_3.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataRepositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataRepositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/CustomUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/SecurityConfigs.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/SecurityConfigs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/test/java/com/Musify/MusifyApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/Musify/MusifyApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,6 +127,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/api/src/test/java/com/Musify/MusifyApplicationTests.java</url>
+          <line>29</line>
+          <properties class="com.Musify.MusifyApplicationTests" method="shouldCreateANewUser">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Musify$MusifyApplication.ic" NAME="MusifyApplication Coverage Results" MODIFIED="1693835352824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

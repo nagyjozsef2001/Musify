@@ -33,7 +33,7 @@ class MusifyApplicationTests {
 		assertThat(createResponse.getStatusCode()).isEqualTo(HttpStatus.CREATED);
 
 		URI locationOfNewCashCard = createResponse.getHeaders().getLocation();
-		ResponseEntity<String> getResponse = restTemplate
+		ResponseEntity<String> getResponse = restTemplate.withBasicAuth("none","nonr")
 				.getForEntity(locationOfNewCashCard, String.class);
 		assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
 

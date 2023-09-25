@@ -20,20 +20,31 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
+    @GetMapping("/user/get/{requestId}")
+    private ResponseEntity<Users> getUser(@PathVariable Integer requestId){
+        System.out.println("szia");
+        Optional<Users> optUser= userRepository.findById(requestId);
+        if(optUser.isPresent()){
+            Users user=optUser.get();
+            return ResponseEntity.ok(user);
+        }
+        return ResponseEntity.notFound().build();
+    }
+
     @PostMapping("/user/registration")
     private ResponseEntity<Void> createUser(@RequestBody Users newUser, UriComponentsBuilder ucb){
         newUser.setDeactivated(false); //by default these should be false
         newUser.setDeleted(false);
+        newUser.setRole(newUser.getRole());
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         newUser.setPassword(passwordEncoder.encode(newUser.getPassword())); //save the password hashed
         Users user=userRepository.save(newUser);
-        URI locationOfNewUser = ucb.path("/{id}").buildAndExpand(user.getId()).toUri(); //get the location of the new object
+        URI locationOfNewUser = ucb.path("user/get/{id}").buildAndExpand(user.getId()).toUri(); //get the location of the new object
         return ResponseEntity.created(locationOfNewUser).build();
     }
 
     @PutMapping("/user/update/{requestedId}")
     private ResponseEntity<Void> updateUser(@PathVariable Integer requestedId, @RequestBody Users updateUser, Principal principal){
-        System.out.println(principal.getName());
         Optional<Users> optUser= Optional.ofNullable(userRepository.findByUserId(requestedId, principal.getName()));
         if(optUser.isPresent()){
             Users user=optUser.get();
@@ -43,6 +54,7 @@ public class UserController {
             user.setPassword(passwordEncoder.encode(updateUser.getPassword()));
             user.setEmail(updateUser.getEmail());
             user.setCountry(updateUser.getCountry());
+            user.setRole(updateUser.getRole()); //just for testing
             userRepository.save(user);
             return ResponseEntity.noContent().build();
         }
