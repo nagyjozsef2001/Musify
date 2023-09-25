@@ -32,17 +32,17 @@ class MusifyApplicationTests {
 		ResponseEntity<Void> createResponse=restTemplate.postForEntity("/user/registration", user, Void.class);
 		assertThat(createResponse.getStatusCode()).isEqualTo(HttpStatus.CREATED);
 
-//		URI locationOfNewCashCard = createResponse.getHeaders().getLocation();
-//		ResponseEntity<String> getResponse = restTemplate
-//				.getForEntity(locationOfNewCashCard, String.class);
-//		assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
+		URI locationOfNewCashCard = createResponse.getHeaders().getLocation();
+		ResponseEntity<String> getResponse = restTemplate
+				.getForEntity(locationOfNewCashCard, String.class);
+		assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
 
-//		DocumentContext documentContext = JsonPath.parse(getResponse.getBody());
-//		Number id = documentContext.read("$.id");
-//		String country = documentContext.read("$.country");
+		DocumentContext documentContext = JsonPath.parse(getResponse.getBody());
+		Number id = documentContext.read("$.id");
+		String country = documentContext.read("$.country");
 
-//		assertThat(id).isNotNull();
-//		assertThat(country).isEqualTo("US");
+		assertThat(id).isNotNull();
+		assertThat(country).isEqualTo("US");
 	}
 
 }

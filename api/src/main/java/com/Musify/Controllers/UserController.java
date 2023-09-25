@@ -3,6 +3,8 @@ package com.Musify.Controllers;
 import com.Musify.DataRepositories.UserRepository;
 import com.Musify.DataTables.Users;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -20,8 +22,10 @@ public class UserController {
 
     @PostMapping("/user/registration")
     private ResponseEntity<Void> createUser(@RequestBody Users newUser, UriComponentsBuilder ucb){
-        newUser.setDeactivated(false);
+        newUser.setDeactivated(false); //by default these should be false
         newUser.setDeleted(false);
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        newUser.setPassword(passwordEncoder.encode(newUser.getPassword())); //save the password hashed
         Users user=userRepository.save(newUser);
         URI locationOfNewUser = ucb.path("/{id}").buildAndExpand(user.getId()).toUri(); //get the location of the new object
         return ResponseEntity.created(locationOfNewUser).build();
@@ -29,13 +33,16 @@ public class UserController {
 
     @PutMapping("/user/update/{requestedId}")
     private ResponseEntity<Void> updateUser(@PathVariable Integer requestedId, @RequestBody Users updateUser, Principal principal){
+        System.out.println(principal.getName());
         Optional<Users> optUser= Optional.ofNullable(userRepository.findByUserId(requestedId, principal.getName()));
         if(optUser.isPresent()){
             Users user=optUser.get();
             user.setFirstName(updateUser.getFirstName());
             user.setLastName(updateUser.getLastName());
-            user.setPassword(updateUser.getPassword());
+            PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            user.setPassword(passwordEncoder.encode(updateUser.getPassword()));
             user.setEmail(updateUser.getEmail());
+            user.setCountry(updateUser.getCountry());
             userRepository.save(user);
             return ResponseEntity.noContent().build();
         }
@@ -54,7 +61,7 @@ public class UserController {
         return ResponseEntity.notFound().build();
     }
 
-    @PutMapping("/user/delete/{requestedId}")
+    @DeleteMapping("/user/delete/{requestedId}")
     private ResponseEntity<Void> deleteUser(@PathVariable Integer requestedId, Principal principal){
         Optional<Users> optUser= Optional.ofNullable(userRepository.findByUserId(requestedId, principal.getName()));
         if(optUser.isPresent()){

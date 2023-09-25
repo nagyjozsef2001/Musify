@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e86789e-3b85-4984-a5e4-0d1e37cc5763" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_3_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_6_1_3.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataRepositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataRepositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/test/java/com/Musify/MusifyApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/Musify/MusifyApplicationTests.java" afterDir="false" />
@@ -19,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -100,8 +101,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MusifyApplicationTests.shouldCreateANewUser" />
         <item itemvalue="Application.MusifyApplication" />
+        <item itemvalue="JUnit.MusifyApplicationTests.shouldCreateANewUser" />
       </list>
     </recent_temporary>
   </component>
