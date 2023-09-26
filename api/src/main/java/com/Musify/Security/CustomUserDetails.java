@@ -43,8 +43,8 @@ public class CustomUserDetails implements UserDetails {
     }
 
     @Override
-    public boolean isAccountNonLocked() {
-        return true;
+    public boolean isAccountNonLocked() { //the login shouldnt work if the account is inactivated (by an admin)
+        return !(user.isDeactivated());
     }
 
     @Override
@@ -54,6 +54,6 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return !(user.isDeactivated());
-    }
+        return !(user.isDeleted());
+    } //the login shouldnt supposed to work when the account is deleted by user
 }

@@ -22,7 +22,6 @@ public class UserController {
 
     @GetMapping("/user/get/{requestId}")
     private ResponseEntity<Users> getUser(@PathVariable Integer requestId){
-        System.out.println("szia");
         Optional<Users> optUser= userRepository.findById(requestId);
         if(optUser.isPresent()){
             Users user=optUser.get();
@@ -35,7 +34,7 @@ public class UserController {
     private ResponseEntity<Void> createUser(@RequestBody Users newUser, UriComponentsBuilder ucb){
         newUser.setDeactivated(false); //by default these should be false
         newUser.setDeleted(false);
-        newUser.setRole(newUser.getRole());
+        newUser.setRole("ROLE_REGULAR");
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         newUser.setPassword(passwordEncoder.encode(newUser.getPassword())); //save the password hashed
         Users user=userRepository.save(newUser);
@@ -54,7 +53,6 @@ public class UserController {
             user.setPassword(passwordEncoder.encode(updateUser.getPassword()));
             user.setEmail(updateUser.getEmail());
             user.setCountry(updateUser.getCountry());
-            user.setRole(updateUser.getRole()); //just for testing
             userRepository.save(user);
             return ResponseEntity.noContent().build();
         }
@@ -67,6 +65,18 @@ public class UserController {
         if(optUser.isPresent()){
             Users user=optUser.get();
             user.setDeactivated(true);
+            userRepository.save(user);
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @PutMapping("/user/promote/{requestedId}")
+    private ResponseEntity<Void> promoteUser(@PathVariable Integer requestedId){
+        Optional<Users> optUser= userRepository.findById(requestedId);
+        if(optUser.isPresent()){
+            Users user=optUser.get();
+            user.setRole("ROLE_ADMIN");
             userRepository.save(user);
             return ResponseEntity.noContent().build();
         }

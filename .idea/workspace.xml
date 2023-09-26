@@ -8,9 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/CustomUserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/CustomUserDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/SecurityConfigs.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/SecurityConfigs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/Musify/MusifyApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/Musify/MusifyApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
