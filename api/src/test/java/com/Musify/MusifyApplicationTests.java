@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.DirtiesContext;
@@ -44,5 +45,65 @@ class MusifyApplicationTests {
 		assertThat(id).isNotNull();
 		assertThat(country).isEqualTo("US");
 	}
+
+	@Test
+	void shouldNotReturnAUserIfPrincipalIsNotAdmin() {
+		ResponseEntity<String> response = restTemplate
+				.withBasicAuth("jason", "jason")
+				.getForEntity("/user/get/1", String.class);
+
+		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+		assertThat(response.getBody()).isBlank();
+	}
+
+	@Test
+	void shouldReturnAUserIfPrincipalIsAdmin() {
+		ResponseEntity<String> response = restTemplate
+				.withBasicAuth("admin", "admin")
+				.getForEntity("/user/get/1", String.class);
+
+		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+		assertThat(response.getBody()).isNotBlank();
+	}
+
+	@Test
+	void shouldNotReturnANotExistingUserIfPrincipalIsAdmin() {
+		ResponseEntity<String> response = restTemplate
+				.withBasicAuth("admin", "admin")
+				.getForEntity("/user/get/99999", String.class);
+
+		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+		assertThat(response.getBody()).isBlank();
+	}
+
+	@Test
+	void shouldNotPromoteAUserIfPrincipalIsNotAdmin() {
+		ResponseEntity<String> response = restTemplate
+				.withBasicAuth("jason", "jason")
+				.getForEntity("/user/promote/1", String.class);
+
+		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+		assertThat(response.getBody()).isBlank();
+	}
+
+	@Test
+	void shouldPromoteAUserIfPrincipalIsAdmin() {
+		ResponseEntity<Void> response = restTemplate
+				.withBasicAuth("admin", "admin")
+				.exchange("/user/promote/1", HttpMethod.PUT, null, Void.class);
+
+		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
+	}
+
+	@Test
+	void shouldNotPromoteANotExistingUserIfPrincipalIsAdmin() {
+		ResponseEntity<Void> response = restTemplate
+				.withBasicAuth("admin", "admin")
+				.exchange("/user/promote/9999", HttpMethod.PUT, null, Void.class);
+
+		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+	}
+
+
 
 }

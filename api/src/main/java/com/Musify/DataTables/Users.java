@@ -15,9 +15,14 @@ public class Users {
             generator = "users_id_sequence"
     )
     private Integer Id;
+    @Column(nullable = false)
     private String firstName;
+    @Column(nullable = false)
     private String lastName;
+    @Column(unique = true,
+            nullable = false)
     private String email;
+    @Column(nullable = false)
     private String password;
     private String country;
     private String role; //admin or regular users, should be updated

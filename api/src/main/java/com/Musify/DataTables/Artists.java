@@ -23,10 +23,15 @@ public class Artists {
     private String bandName;
     private Date birthday;
     private String location;
-    private String activePeriod;
+    private Integer startYear;
+    private Integer startMonth;
+    private Integer startDay;
+    private Integer endYear;
+    private Integer endMonth;
+    private Integer endDay;
     private boolean type; //person or band, true if person
 
-    public Artists(int id, String firstName, String lastName, String stageName, String bandName, Date birthday, String location, String activePeriod, boolean type) {
+    public Artists(Integer id, String firstName, String lastName, String stageName, String bandName, Date birthday, String location, Integer startYear, Integer startMonth, Integer startDay, Integer endYear, Integer endMonth, Integer endDay, boolean type) {
         Id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -34,11 +39,14 @@ public class Artists {
         this.bandName = bandName;
         this.birthday = birthday;
         this.location = location;
-        this.activePeriod = activePeriod;
+        this.startYear = startYear;
+        this.startMonth = startMonth;
+        this.startDay = startDay;
+        this.endYear = endYear;
+        this.endMonth = endMonth;
+        this.endDay = endDay;
         this.type = type;
     }
-
-
 
     public Artists() {
     }
@@ -99,19 +107,59 @@ public class Artists {
         this.location = location;
     }
 
-    public String getActivePeriod() {
-        return activePeriod;
-    }
-
-    public void setActivePeriod(String activePeriod) {
-        this.activePeriod = activePeriod;
-    }
-
     public boolean isType() {
         return type;
     }
 
     public void setType(boolean type) {
         this.type = type;
+    }
+
+    public Integer getStartYear() {
+        return startYear;
+    }
+
+    public void setStartYear(Integer startYear) {
+        this.startYear = startYear;
+    }
+
+    public Integer getStartMonth() {
+        return startMonth;
+    }
+
+    public void setStartMonth(Integer startMonth) {
+        this.startMonth = startMonth;
+    }
+
+    public Integer getStartDay() {
+        return startDay;
+    }
+
+    public void setStartDay(Integer startDay) {
+        this.startDay = startDay;
+    }
+
+    public Integer getEndYear() {
+        return endYear;
+    }
+
+    public void setEndYear(Integer endYear) {
+        this.endYear = endYear;
+    }
+
+    public Integer getEndMonth() {
+        return endMonth;
+    }
+
+    public void setEndMonth(Integer endMonth) {
+        this.endMonth = endMonth;
+    }
+
+    public Integer getEndDay() {
+        return endDay;
+    }
+
+    public void setEndDay(Integer endDay) {
+        this.endDay = endDay;
     }
 }
