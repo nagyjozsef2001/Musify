@@ -20,6 +20,7 @@ public class SecurityConfigs {
                 .requestMatchers("/user/promote/**").hasRole("ADMIN") // just admins can promote someone to admin
                 .requestMatchers("/user/**").authenticated()
                 .requestMatchers("/login").permitAll() //access without authorization
+                .requestMatchers("/artist/**").hasRole("ADMIN")
                 .and()
                 .csrf().disable()
                 .cors().and().httpBasic();

@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7e86789e-3b85-4984-a5e4-0d1e37cc5763" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataTables/Artists.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataTables/Artists.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataTables/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataTables/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/Musify/MusifyApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/Musify/MusifyApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/SecurityConfigs.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/SecurityConfigs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -67,7 +66,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.com.haulmont.jpb.tools" />
   </component>
-  <component name="RunManager" selected="JUnit.MusifyApplicationTests.shouldNotReturnANotExistingUserIfPrincipalIsAdmin">
+  <component name="RunManager" selected="Application.MusifyApplication">
     <configuration name="MusifyApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.Musify.MusifyApplication" />
       <module name="demo" />
@@ -147,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MusifyApplication" />
         <item itemvalue="JUnit.MusifyApplicationTests.shouldNotReturnANotExistingUserIfPrincipalIsAdmin" />
         <item itemvalue="JUnit.MusifyApplicationTests.shouldReturnAUserIfPrincipalIsAdmin" />
         <item itemvalue="JUnit.MusifyApplicationTests.shouldNotPromoteANotExistingUserIfPrincipalIsAdmin" />
         <item itemvalue="JUnit.MusifyApplicationTests.shouldPromoteAUserIfPrincipalIsAdmin" />
-        <item itemvalue="Application.MusifyApplication" />
       </list>
     </recent_temporary>
   </component>

@@ -2,6 +2,8 @@ package com.Musify.Controllers;
 
 import com.Musify.DataRepositories.UserRepository;
 import com.Musify.DataTables.Users;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -37,9 +39,14 @@ public class UserController {
         newUser.setRole("ROLE_REGULAR");
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         newUser.setPassword(passwordEncoder.encode(newUser.getPassword())); //save the password hashed
-        Users user=userRepository.save(newUser);
-        URI locationOfNewUser = ucb.path("user/get/{id}").buildAndExpand(user.getId()).toUri(); //get the location of the new object
-        return ResponseEntity.created(locationOfNewUser).build();
+        try{
+            Users user=userRepository.save(newUser);
+            URI locationOfNewUser = ucb.path("user/get/{id}").buildAndExpand(user.getId()).toUri(); //get the location of the new object
+            return ResponseEntity.created(locationOfNewUser).build();
+        }
+        catch (DataIntegrityViolationException e){ // in case of unsuccesfull save, mostly cause of duplicate entry for uniq column
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
+        }
     }
 
     @PutMapping("/user/update/{requestedId}")
