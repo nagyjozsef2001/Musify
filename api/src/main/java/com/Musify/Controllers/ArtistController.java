@@ -28,6 +28,12 @@ public class ArtistController {
         return ResponseEntity.notFound().build();
     }
 
+    @GetMapping("/get")
+    private ResponseEntity<Iterable<Artists>> getAll(){
+        Iterable<Artists> artists = artistRepository.findAll();
+        return ResponseEntity.ok(artists);
+    }
+
     @PostMapping("/create")
     private ResponseEntity<Void> createArtist(@RequestBody Artists newArtist, UriComponentsBuilder ucb){
         Artists artist = artistRepository.save(newArtist);

@@ -19,7 +19,6 @@ public class Albums {
     private Integer id;
     private String title;
     private String description;
-    private String artist;
     private Date releaseDate;
     private String label;
 
@@ -31,7 +30,6 @@ public class Albums {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.artist = artist;
         this.releaseDate = releaseDate;
         this.label = label;
         this.artists = artists;
@@ -62,14 +60,6 @@ public class Albums {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getArtist() {
-        return artist;
-    }
-
-    public void setArtist(String artist) {
-        this.artist = artist;
     }
 
     public Date getReleaseDate() {

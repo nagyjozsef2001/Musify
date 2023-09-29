@@ -1,4 +1,4 @@
-package com.Musify.Controllers;
+package com.Musify.Controllers.Auth;
 
 public class AuthenticationRequest {
     private String email;

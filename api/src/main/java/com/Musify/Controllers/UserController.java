@@ -1,5 +1,8 @@
 package com.Musify.Controllers;
 
+import com.Musify.Controllers.Auth.AuthenticationRequest;
+import com.Musify.Controllers.Auth.AuthenticationResponse;
+import com.Musify.Controllers.Auth.AuthenticationService;
 import com.Musify.DataRepositories.UserRepository;
 import com.Musify.DataTables.Users;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -35,6 +38,12 @@ public class UserController {
             return ResponseEntity.ok(user);
         }
         return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/user/get")
+    private ResponseEntity<Iterable<Users>> getAll(){
+        Iterable<Users> users = userRepository.findAll();
+        return ResponseEntity.ok(users);
     }
 
     @PostMapping("/user/registration")
@@ -107,18 +116,10 @@ public class UserController {
         return ResponseEntity.notFound().build();
     }
 
-    @PostMapping("/authenticate")
+    @PostMapping("/login")
     public ResponseEntity<AuthenticationResponse> authenticate(
             @RequestBody AuthenticationRequest request
     ) {
         return ResponseEntity.ok(service.authenticate(request));
     }
-
-//    @PostMapping("/refresh-token")
-//    public void refreshToken(
-//            HttpServletRequest request,
-//            HttpServletResponse response
-//    ) throws IOException {
-//        service.refreshToken(request, response);
-//    }
 }

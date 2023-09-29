@@ -1,4 +1,4 @@
-package com.Musify.Controllers;
+package com.Musify.Controllers.Auth;
 
 import com.Musify.DataRepositories.UserRepository;
 import com.Musify.Security.JwtService;

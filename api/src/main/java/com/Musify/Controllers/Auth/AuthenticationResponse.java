@@ -1,4 +1,4 @@
-package com.Musify.Controllers;
+package com.Musify.Controllers.Auth;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
@@ -7,12 +7,9 @@ import lombok.Builder;
 public class AuthenticationResponse {
     @JsonProperty("access_token")
     private String accessToken;
-    @JsonProperty("refresh_token")
-    private String refreshToken;
 
-    public AuthenticationResponse(String accessToken, String refreshToken) {
+    public AuthenticationResponse(String accessToken) {
         this.accessToken = accessToken;
-        this.refreshToken = refreshToken;
     }
 
     public AuthenticationResponse() {
@@ -24,13 +21,5 @@ public class AuthenticationResponse {
 
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
-    }
-
-    public String getRefreshToken() {
-        return refreshToken;
-    }
-
-    public void setRefreshToken(String refreshToken) {
-        this.refreshToken = refreshToken;
     }
 }

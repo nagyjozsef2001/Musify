@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e86789e-3b85-4984-a5e4-0d1e37cc5763" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/ArtistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/ArtistController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/AuthenticationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/Auth/AuthenticationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/AuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/Auth/AuthenticationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/Auth/AuthenticationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/SecurityConfigs.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/SecurityConfigs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataRepositories/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataRepositories/PlaylistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataTables/Albums.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataTables/Albums.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -72,6 +74,9 @@
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.Musify.Security" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.Musify.Controllers.Auth" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MusifyApplication">
@@ -155,9 +160,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MusifyApplication" />
+        <item itemvalue="JUnit.MusifyApplicationTests.shouldNotPromoteANotExistingUserIfPrincipalIsAdmin" />
         <item itemvalue="JUnit.MusifyApplicationTests.shouldNotReturnANotExistingUserIfPrincipalIsAdmin" />
         <item itemvalue="JUnit.MusifyApplicationTests.shouldReturnAUserIfPrincipalIsAdmin" />
-        <item itemvalue="JUnit.MusifyApplicationTests.shouldNotPromoteANotExistingUserIfPrincipalIsAdmin" />
         <item itemvalue="JUnit.MusifyApplicationTests.shouldPromoteAUserIfPrincipalIsAdmin" />
       </list>
     </recent_temporary>
