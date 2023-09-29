@@ -5,6 +5,7 @@ import com.Musify.DataTables.Users;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -17,9 +18,13 @@ import java.util.Optional;
 @RestController
 public class UserController {
     private final UserRepository userRepository;
+    private final AuthenticationManager authenticationManager;
+    private final AuthenticationService service;
 
-    public UserController(UserRepository userRepository) {
+    public UserController(UserRepository userRepository, AuthenticationManager authenticationManager, AuthenticationService service) {
         this.userRepository = userRepository;
+        this.authenticationManager = authenticationManager;
+        this.service = service;
     }
 
     @GetMapping("/user/get/{requestId}")
@@ -102,8 +107,18 @@ public class UserController {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping("/login")
-    private void login(){
+    @PostMapping("/authenticate")
+    public ResponseEntity<AuthenticationResponse> authenticate(
+            @RequestBody AuthenticationRequest request
+    ) {
+        return ResponseEntity.ok(service.authenticate(request));
     }
 
+//    @PostMapping("/refresh-token")
+//    public void refreshToken(
+//            HttpServletRequest request,
+//            HttpServletResponse response
+//    ) throws IOException {
+//        service.refreshToken(request, response);
+//    }
 }
