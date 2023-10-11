@@ -10,6 +10,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.Arrays;
 
 @Configuration
 @EnableWebSecurity
@@ -37,7 +42,12 @@ public class SecurityConfigs {
                 .requestMatchers("/user/**").authenticated()
                 .requestMatchers("/login").permitAll() //access without authorization
                 .requestMatchers("/artist/**").hasRole("ADMIN")
-                .requestMatchers("/authenticate").permitAll()
+                .requestMatchers("/playlist/get/**").hasAnyRole("ADMIN", "REGULAR")
+                .requestMatchers("/playlist/**").hasRole("ADMIN")
+                .requestMatchers("/songs/get/**").hasAnyRole("ADMIN", "REGULAR")
+                .requestMatchers("/songs/**").hasRole("ADMIN")
+                .requestMatchers("/album/get/**").hasAnyRole("ADMIN", "REGULAR")
+                .requestMatchers("/album/**").hasRole("ADMIN")
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -50,5 +60,17 @@ public class SecurityConfigs {
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    CorsConfigurationSource corsConfigurationSource(){ //setting the allowed methods and origins
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200/"));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
+        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "Access-Control-Allow-Origin"));
+        configuration.setAllowCredentials(true);
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
     }
 }

@@ -1,0 +1,11 @@
+<div id="formContent"  class="login-container">
+    <a href="/"><button class="go-back-button">Cancel</button></a>
+    <h3>Login</h3>
+
+    <form action="@{/login}" method="post" (ngSubmit)="handleLogin()" class="login-form">
+    <input type="text" id="username" [(ngModel)]="loginObj.email" name="username" placeholder="email">
+    <input type="password" id="password" [(ngModel)]="loginObj.password" name="password" placeholder="password">
+    <button type="submit" class="submit-button">Log in!</button>
+    </form>
+
+</div>

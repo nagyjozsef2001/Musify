@@ -18,6 +18,7 @@ import java.net.URI;
 import java.security.Principal;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class UserController {
     private final UserRepository userRepository;

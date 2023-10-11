@@ -7,12 +7,10 @@
     <list default="true" id="7e86789e-3b85-4984-a5e4-0d1e37cc5763" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/ArtistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/ArtistController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/AuthenticationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/Auth/AuthenticationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/AuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/Auth/AuthenticationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/Auth/AuthenticationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataRepositories/PlaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataRepositories/PlaylistRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataTables/Albums.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/DataTables/Albums.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/MusifyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/MusifyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/SecurityConfigs.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/SecurityConfigs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,11 +63,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.com.haulmont.jpb.tools" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -160,10 +155,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MusifyApplication" />
-        <item itemvalue="JUnit.MusifyApplicationTests.shouldNotPromoteANotExistingUserIfPrincipalIsAdmin" />
-        <item itemvalue="JUnit.MusifyApplicationTests.shouldNotReturnANotExistingUserIfPrincipalIsAdmin" />
-        <item itemvalue="JUnit.MusifyApplicationTests.shouldReturnAUserIfPrincipalIsAdmin" />
-        <item itemvalue="JUnit.MusifyApplicationTests.shouldPromoteAUserIfPrincipalIsAdmin" />
       </list>
     </recent_temporary>
   </component>
@@ -188,10 +179,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Musify$MusifyApplication.ic" NAME="MusifyApplication Coverage Results" MODIFIED="1693835352824" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.Musify.*</FILTER>
-    </SUITE>
   </component>
 </project>

@@ -41,11 +41,24 @@ public class ArtistController {
         return ResponseEntity.created(locationOfNewArtist).build();
     }
 
-    @PutMapping("/update")
+    @PutMapping("/update/{id}")
     private ResponseEntity<Void> updateArtist(@PathVariable Integer id, @RequestBody Artists updateArtist){
         Optional<Artists> optArtist = artistRepository.findById(id);
         if(optArtist.isPresent()){
             Artists artist = optArtist.get();
+            artist.setBandName(updateArtist.getBandName());
+            artist.setBirthday(updateArtist.getBirthday());
+            artist.setFirstName(updateArtist.getFirstName());
+            artist.setLastName(updateArtist.getLastName());
+            artist.setLocation(updateArtist.getLocation());
+            artist.setEndDay(updateArtist.getEndDay());
+            artist.setEndMonth(updateArtist.getEndMonth());
+            artist.setEndYear(updateArtist.getEndYear());
+            artist.setStartDay(updateArtist.getStartDay());
+            artist.setStartMonth(updateArtist.getStartMonth());
+            artist.setStartYear(updateArtist.getStartYear());
+            artist.setType(updateArtist.isType());
+            artist.setStageName(updateArtist.getStageName());
             artistRepository.save(artist);
             return ResponseEntity.noContent().build();
         }
