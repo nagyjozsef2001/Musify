@@ -1,0 +1,30 @@
+<form [formGroup]="registrationForm" (submit)="register()">
+    <div class="registration-form">
+            <label for="first-name">First name</label>
+            <input id="first-name" type="text" formControlName="firstName">
+            <br>
+            <br>
+
+            <label for="last-name">Last name</label>
+            <input id="last-name" type="text" formControlName="lastName">
+            <br>
+            <br>
+
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email">
+            <br>
+            <br>
+
+            <label for="password">Password</label>
+            <input id="password" type="password" formControlName="password">
+            <br>
+            <br>
+
+            <label for="passwordAgain">Password Again</label>
+            <input id="passwordAgain" type="password" formControlName="passwordAgain">
+            <br>
+            <br>
+            
+            <button type="submit" class="primary">Done!</button>
+    </div>
+</form>

@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7e86789e-3b85-4984-a5e4-0d1e37cc5763" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/ArtistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/ArtistController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/MusifyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/MusifyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/SecurityConfigs.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/Musify/Security/SecurityConfigs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/MusifyFrontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/MusifyFrontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/MusifyFrontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/MusifyFrontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/MusifyFrontend/src/app/pages/users/users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/MusifyFrontend/src/app/pages/users/users.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
